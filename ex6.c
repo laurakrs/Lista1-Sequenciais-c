@@ -18,9 +18,8 @@ printf("Bem vindo ao programa que calcula o custo ao consumidor!\n");
 printf("Custo de fabrica: ");
 scanf("%f", &custoFabrica);
 
-printf("Custo consumidor %.2f", custoFabrica*1.28*1.45);
+printf("Custo consumidor %.2f", custoFabrica*(1 + 0.28 + 0.45));
 
 return 0; 
-
 
 }
