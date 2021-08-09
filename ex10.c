@@ -9,15 +9,19 @@ de seus algarismos. Os 3 algarismos do número dado são diferentes de zero.
 
 int main(void){
 
-int numero;
+int numero, n1, n2, n3;
 
 printf("Programa para inverter algarismos");
 printf("\nEntre com o numero inteiro de 3 algarismos: ");
 scanf("%d", &numero);
 
-printf("%d", numero%10);
-printf("%d", (numero-(numero%10))%100);
-printf("%d", (((numero-(numero%10)-(numero-(numero%10)%100))/100)));
+n1 = numero%10;
+n2 = (numero - n1)%100;
+n3 = (numero - n1 - n2)/100;
+
+
+printf("\n%d", (n1*100)+n2+n3);
+
 
 return 0; 
 
