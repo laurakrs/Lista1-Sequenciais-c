@@ -10,24 +10,23 @@
 #include <stdio.h>
 
 int main(void){
-
-    int numero, n1, n2, n3, novoNumero;
+  int numero, n1, n2, n3, novoNumero;
 
     printf("Bem vindo ao criador de um novo numero!");
     printf("\nEntre com um numero de 3 algarismos: ");
     scanf("%d", &numero);
 
-    n3 = numero%10; 
-    n2 = (numero-n3)%100; 
+    n3 = numero%10;
+    n2 = ((numero-n3)%100)/10;
     n1 = (numero-n2-n3)/100;
 
-    printf("%d", &n3);
-    printf("%d", &n2);
-    printf("%d", &n1);
+    printf("\n%d", n3);
+    printf("\n%d", n2);
+    printf("\n%d", n1);
 
     novoNumero = numero*10 + (n1+n2*3+n3*5)%7;
-
+    
     printf("Novo numero: %d", novoNumero);
 
-    return 0; 
+    return 0;
 }
