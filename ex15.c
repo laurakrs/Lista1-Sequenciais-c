@@ -16,14 +16,17 @@ int main(void){
     printf("Raio do cilindro: ");
     scanf("%f", &raio);
 
-    printf("Altura do cilindro: ");
+    printf("\nAltura do cilindro: ");
     scanf("%f", &altura);
 
     area = 3.14 * pow(raio,2) + 2*3.14*raio*altura;
 
-    latas = area/3; 
+    latas = ceil(area/3); 
 
+    custo = latas * 25;
 
+    printf("\nNumero de latas: %f", latas);
+    printf("\nCusto: %f", custo);
 
     return 0; 
 }
