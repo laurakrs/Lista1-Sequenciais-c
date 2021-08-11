@@ -7,8 +7,23 @@
 */
 
 #include <stdio.h>
+#include <math.h>
 
 int main(void){
+
+    float custo, latas, raio, altura, area;
+    
+    printf("Raio do cilindro: ");
+    scanf("%f", &raio);
+
+    printf("Altura do cilindro: ");
+    scanf("%f", &altura);
+
+    area = 3.14 * pow(raio,2) + 2*3.14*raio*altura;
+
+    latas = area/3; 
+
+
 
     return 0; 
 }
