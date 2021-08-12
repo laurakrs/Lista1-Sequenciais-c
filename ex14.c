@@ -11,8 +11,8 @@ efetivamente pago. Supor que o troco seja dado em notas de 50, 20 e 10 reais, no
 
 int main(void){
 
-    float valorDado, valorPago, troco;
-    int notas50, notas20, notas10, notas1, moedas50, moedas10, moedas5, moedas1; 
+    float valorDado, valorPago, troco, trocoCentavos;
+    int trocoNota, notas50, notas20, notas10, notas1, moedas50, moedas10, moedas5, moedas1; 
 
     printf("Qual o valor a ser pago? ");
     scanf("%f", valorPago);
@@ -20,14 +20,29 @@ int main(void){
     printf("Qual o valor a dado? ");
     scanf("%f", valorDado);
 
-    troco = valorDado - valorPago;
-    
-    notas50 = troco/50; 
-    
-    notas20 = (troco - notas50*50)/20; 
+    troco = valorDado - valorPago; //54
 
-    notas10 = (troco - notas50*50 - notas20*20)/10; 
+    trocoNota = floor(troco);
 
+    trocoCentavos = (troco - trocoNota)*100;
+    
+    notas50 = floor(trocoNota/50); // 1 
+    
+    notas20 = floor((trocoNota - notas50*50)/20); //4/20 -> 0 
+
+    notas10 = floor((trocoNota - notas50*50 - notas20*20)/10); //4/10 -> 0
+
+    notas1 = trocoNota - notas50*50 - notas20*20 - notas10*10; //4 
+
+    moedas50 = floor(trocoCentavos/50);
+    
+    moedas10 = floor((trocoCentavos - moedas50*50)/10); 
+
+    moedas5 = floor((trocoCentavos - moedas50*50 - moedas10*10)/5);
+
+    moedas1 = trocoCentavos - moedas50*50 - moedas10*10 - moedas5*5;
+     
+    
     
 
 
