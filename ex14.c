@@ -8,23 +8,27 @@ efetivamente pago. Supor que o troco seja dado em notas de 50, 20 e 10 reais, no
 */
 
 #include <stdio.h>
+#include <math.h>
 
 int main(void){
 
-    float valorDado, valorPago, troco, trocoCentavos;
-    int trocoNota, notas50, notas20, notas10, notas1, moedas50, moedas10, moedas5, moedas1; 
+    float valorDado, valorPago, troco;
+    int trocoNota, trocoCentavos, notas50, notas20, notas10, notas1, moedas50, moedas10, moedas5, moedas1; 
 
     printf("Qual o valor a ser pago? ");
-    scanf("%f", valorPago);
+    scanf("%f", &valorPago);
 
     printf("Qual o valor a dado? ");
-    scanf("%f", valorDado);
+    scanf("%f", &valorDado);
 
     troco = valorDado - valorPago; //54
 
     trocoNota = floor(troco);
 
     trocoCentavos = (troco - trocoNota)*100;
+
+    printf("\nTroco Nota: %d", trocoNota);
+    printf("\nTroco Centavos: %d",trocoCentavos);
     
     notas50 = floor(trocoNota/50); // 1 
     
@@ -42,7 +46,8 @@ int main(void){
 
     moedas1 = trocoCentavos - moedas50*50 - moedas10*10 - moedas5*5;
      
-    
+    printf("\nQuantidade de notas: 50 - %d; 20 - %d; 10 - %d; 1 - %d", notas50, notas20, notas10, notas1);
+    printf("\nQuantidade de moedas: 50 - %d; 10 - %d; 5 - %d; 1 - %d", moedas50, moedas10, moedas5, moedas1);
     
 
 
